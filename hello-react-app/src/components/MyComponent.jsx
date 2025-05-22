@@ -5,8 +5,16 @@ export default class MyComponent extends Component {
   // 상태변수를 포함하는 state 객체 선언
   state = {
     value: 0,
-    
+    message: '',
+    username: '',
   }
+
+  handleChange = (e) => {
+    this.setState({
+      message: e.target.value
+    })
+  }
+
   // Event Handler 함수
   handleDecrement = () => (
     this.setState({
@@ -14,8 +22,8 @@ export default class MyComponent extends Component {
     }));
   render() {
     const {name, age} = this.props;
-    const { value } = this.state;
-    const {handleDecrement} = this;
+    const { value, message, username } = this.state;
+    const {handleDecrement, handleChange } = this;
     return (
       <div>
         <h2>클래스형 컴포넌트</h2>
@@ -25,6 +33,9 @@ export default class MyComponent extends Component {
           this.setState({ value: value + 1}))}>
           증가</button>
         <button onClick={handleDecrement}>감소</button>
+        <p>State message의 값 = {message}</p>
+        <input name="message" value={message} onChange={handleChange} />
+        <input name="username" value={username} onChange={handleChange} />
       </div>
     )
   }

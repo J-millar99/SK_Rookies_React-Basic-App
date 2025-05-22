@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const MyComponentFunc = ({ name, children }) => {
-    // 상태변수와 setter 함수 선언ㄴ하기
-    const {value, setValue} = useState(0);
+    // 상태변수와 setter 함수 선언하기
+    const [value, setValue] = useState(0);
 
     return (
         <div>
