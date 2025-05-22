@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 
 export default class MyComponent extends Component {
   render() {
+    const {name, age} = this.props;
     return (
       <div>
-        <h3>Hello! {this.props.name}</h3>
+        <h3>Hello! {name} / {age} </h3>
       </div>
     )
   }
@@ -16,5 +17,6 @@ MyComponent.defaultProps = {
 };
 
 MyComponent.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string,
+    age: PropTypes.number.isRequired
 };
