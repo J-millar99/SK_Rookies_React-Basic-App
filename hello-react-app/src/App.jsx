@@ -1,11 +1,11 @@
 import './App.css'
+import MyComponent from './components/MyComponent'
 
 function App() {
-  let text = "Dev-Server"
   return (
   <>
-    <h1>Hello ReactJS</h1>
-    <h2>Hello2 {text} </h2>
+    <MyComponent name="ReactJS" />
+    <MyComponent name={100} />
   </>
   )
 }
