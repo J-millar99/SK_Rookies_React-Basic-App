@@ -1,4 +1,3 @@
-import { Children } from '../../node_modules/react/cjs/react.development';
 const MyComponentFunc = ({ name, children }) => {
     return (
         <div>
