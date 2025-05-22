@@ -6,6 +6,7 @@ export default class MyComponent extends Component {
     const {name, age} = this.props;
     return (
       <div>
+        <h2>클래스형 컴포넌트</h2>
         <h3>Hello! {name} / {age} </h3>
       </div>
     )
