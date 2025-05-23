@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import './MyComponent.css';
 
 export default class MyComponent extends Component {
   // 상태변수를 포함하는 state 객체 선언
@@ -7,6 +8,7 @@ export default class MyComponent extends Component {
     value: 0,
     message: '',
     username: '',
+    isValid: false,
   }
 
   handleChange = (e) => {
@@ -22,8 +24,8 @@ export default class MyComponent extends Component {
     }));
   render() {
     const {name, age} = this.props;
-    const { value, message, username } = this.state;
-    const {handleDecrement, handleChange } = this;
+    const { value, message, username, isValid } = this.state;
+    const { handleDecrement, handleChange } = this;
     return (
       <div>
         <h2>클래스형 컴포넌트</h2>
@@ -36,7 +38,10 @@ export default class MyComponent extends Component {
         <p>State message의 값 = {message}</p>
         <input name="message" value={message} onChange={handleChange} /> <br/>
         <p>State username의 값 = {username}</p>
-        <input name="username" value={username} onChange={handleChange} /> <br/>
+        <input name="username" value={username} onChange={handleChange} 
+          className={ isValid ? 'success' : 'failure' }
+          ref={(ref) => this.myUsername=ref}
+        /> <br/>
       </div>
     )
   }
